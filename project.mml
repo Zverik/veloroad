@@ -1,0 +1,644 @@
+{
+  "bounds": [
+    28.1799,
+    59.3332,
+    30.7178,
+    60.1579
+  ],
+  "center": [
+    29.6191,
+    59.7619,
+    7
+  ],
+  "format": "png8",
+  "interactivity": false,
+  "minzoom": 6,
+  "maxzoom": 15,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "places.mss",
+    "roads.mss",
+    "contours.mss",
+    "nature.mss",
+    "rails.mss"
+  ],
+  "Layer": [
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,place,name from planet_osm_polygon where place in ('village', 'town', 'city')) as placep",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "placep",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "placep"
+    },
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way from planet_osm_polygon where \"natural\"='wood' or landuse = 'forest' or leisure='park') as forest",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "forest",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "forest"
+    },
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way from planet_osm_polygon where landuse in ('residential', 'commercial', 'industrial', 'farmyard')) as landuse",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "residential",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "residential"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,waterway,name from planet_osm_line where waterway in ('stream', 'river','drain','ditch','canal')) as rivers",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "rivers",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "rivers"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "ocean",
+      "class": "",
+      "Datasource": {
+		"type": "shape",
+        "file": "data/water-polygons-split-3857/water_polygons.shp"
+      },
+      "layer": null,
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "ocean"
+    },
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,name,way_area from planet_osm_polygon where \"natural\"='water' or waterway='riverbank') as lakes",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis",
+        "id": "lakes",
+        "project": "lineart",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "lakes",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "lakes"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.84331987480243,
+        41.669801370312136,
+        63.12363083529556
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,admin_level from planet_osm_roads where admin_level in ('6', '4', '2')) as admin",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7140538.62,4638661.07,9130629.86",
+        "dbname": "gis"
+      },
+      "id": "admin",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "admin"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.84331987480243,
+        41.669801370312136,
+        63.12363083529556
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,admin_level from planet_osm_roads where admin_level in ('4', '2')) as admin",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7140538.62,4638661.07,9130629.86",
+        "dbname": "gis"
+      },
+      "id": "admin-line",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "admin-line"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -0.00013888888888888892,
+        49.999861111111116,
+        59.999861111111116,
+        69.99986111111112
+      ],
+      "id": "contours",
+      "class": "",
+      "Datasource": {
+		"type": "shape",
+        "file": "data/gmted/gmted-contour25g.shp",
+        "id": "contours",
+        "project": "lineart",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "layer": null,
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "contours"
+    },
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way from planet_osm_polygon where building is not null) as buildings",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        24.9482981,
+        56.2049279,
+        41.1063007,
+        63.4120211
+      ],
+      "id": "railway-json",
+      "class": "railway",
+      "Datasource": {
+        "type": "ogr",
+        "file": "data/railways-nw.gpx",
+        "layer": "tracks",
+        "all_layers": [
+          "route_points",
+          "routes",
+          "track_points",
+          "waypoints"
+        ]
+      },
+      "layer": "tracks",
+      "srs-name": "autodetect",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "railway-json",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way from planet_osm_line where railway='rail' and service is null) as railway",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "railway",
+      "class": "railway",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "railway"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way, highway,(case when living_street is not null or service is not null then 1 else 0 end) as service from planet_osm_line where highway in ('path', 'cycleway', 'footway', 'service', 'track','pedestrian','living_street','residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk', 'motorway', 'tertiary_link', 'secondary_link', 'primary_link', 'trunk_link', 'motorway_link') and tunnel in ('yes', 'true', '1') order by z_order) as tunnels",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "tunnels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "tunnels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way, highway,(case when living_street is not null or service is not null then 1 else 0 end) as service from planet_osm_line where highway in ('path', 'cycleway', 'footway', 'service', 'track','pedestrian','living_street','residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk', 'motorway', 'tertiary_link', 'secondary_link', 'primary_link', 'trunk_link', 'motorway_link') and (bridge is null or not bridge in ('yes', 'true', '1')) and (tunnel is null or not tunnel in ('yes', 'true', '1')) order by z_order) as highways",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "highways",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "highways"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way, highway,(case when living_street is not null or service is not null then 1 else 0 end) as service from planet_osm_line where highway in ('path', 'cycleway', 'footway', 'service', 'track','pedestrian','living_street','residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk', 'motorway', 'tertiary_link', 'secondary_link', 'primary_link', 'trunk_link', 'motorway_link') and bridge in ('yes', 'true', '1') order by z_order) as bridges",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "bridges",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "bridges"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        20.975879545984167,
+        53.84680894368537,
+        41.61137036282504,
+        63.12389317378751
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,name from planet_osm_point where railway='subway_entrance') as subway",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "dbname": "gis"
+      },
+      "id": "subway",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "subway"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.664577,
+        61.794854,
+        34.299016,
+        62.476441
+      ],
+      "id": "gorny",
+      "class": "route",
+      "Datasource": {
+        "type": "ogr",
+        "file": "data/route.gpx",
+        "layer": "tracks",
+        "all_layers": [
+          "route_points",
+          "routes",
+          "track_points",
+          "waypoints"
+        ]
+      },
+      "layer": "tracks",
+      "srs-name": "autodetect",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "gorny",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        20.975879545984167,
+        53.84680894368537,
+        41.61137036282504,
+        63.12389317378751
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,place,coalesce(\"name:ru\", name) as name,(case when place='city' then 9 when place='town' then 8 when place='village' then 7 when place='hamlet' then 6 when place='suburb' then 5 when place='locality' then 4 else 0 end) as p_order, (case when coalesce(population, '')~E'^\\\\d+$' then population::int else 0 end) as pop from planet_osm_point where place in ('village', 'town', 'city', 'hamlet', 'suburb', 'locality') order by p_order desc, pop desc) as places",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "dbname": "gis",
+        "id": "places",
+        "project": "lineart",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "places",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "places"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        20.975879545984167,
+        53.84680894368537,
+        41.61137036282504,
+        63.12389317378751
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,railway,station,name,length(name) as len,(select 90+degrees(ST_Azimuth(ST_StartPoint(inter), ST_EndPoint(inter))) from (select ST_Intersection(r.way, ST_Buffer(p.way, 100)) as inter from planet_osm_line r where r.railway='rail' and r.way && ST_Buffer(p.way, 100) order by ST_Distance(r.way, p.way) limit 1) rr) as angle from planet_osm_point p where railway in ('station', 'halt') and (station is null or station != 'subway')) as stations",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "dbname": "gis",
+        "id": "stations",
+        "project": "lineart",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "stations",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "stations"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way, highway,(case when ref = 'А-118' then 'КАД' when length(ref) <= 5 then ref else null end) as ref,name from planet_osm_line where highway in ('tertiary', 'secondary', 'primary', 'trunk', 'motorway')) as highwaysh",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "hlabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "hlabels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,waterway,name from planet_osm_line where waterway in ('river', 'canal')) as rivers",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "wlabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "wlabels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.8391333927831,
+        41.679925742890276,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from (select ST_LineMerge(ST_Union(way)) as way, replace(replace(replace(replace(name, 'набережная', 'наб.'), 'улица', 'ул.'), 'проспект', 'пр.'), 'переулок', 'пер.') as name from (select way,name from planet_osm_line where highway in ('tertiary', 'secondary', 'primary') and way && ST_Expand(!bbox!, 0.1)) p group by name) pp order by ST_Length(way) desc) as highwaysl",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "hslabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "hslabels"
+    },
+    {
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,way_area, name from planet_osm_polygon where leisure = 'park') as wol",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "plabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "plabels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.67154065835024,
+        53.83894644201676,
+        41.64409284452203,
+        63.124710468885965
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,way_area,replace(name,'озеро', 'оз.') as name from planet_osm_polygon where \"natural\" = 'water' and (water is null or water != 'river')) as wol",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "dbname": "gis"
+      },
+      "id": "wolabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "wolabels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20,
+        50,
+        40,
+        70
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select id+1 as id, (case when id<n or id>n*2+1 then '' when id < n*2 then cast((id-n)*scale as text) when id=n*2 then (n*scale)||' км' else 'Карта © OpenStreetMap' end) as label, id%2 as id2,\n(case when id < n then ST_MakeLine(st_project(pt, 1000*scale*id, pi()/2)::geometry,\nst_project(pt, 1000*scale*(id+1), pi()/2)::geometry)\nwhen id <= n*2 then st_project(pt, 1000*scale*(id-n), pi()/2)::geometry\nelse st_project(pt, 1000*scale*n/2, pi()/2)::geometry\nend) as way\nfrom\n(select 5 as n, 1 as scale, ST_SetSRID(ST_Point(34.3, 61.94), 4326) as pt) d,\ngenerate_series(0, 11) id) as scale",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "custom",
+        "extent": "20,50,40,70",
+        "dbname": "gis",
+        "id": "scale",
+        "project": "lineart",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "scale",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "scale",
+      "status": "off"
+    }
+  ],
+  "scale": 1,
+  "metatile": 3,
+  "_basemap": "",
+  "name": "Veloroad",
+  "description": "",
+  "attribution": ""
+}
