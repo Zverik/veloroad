@@ -4,7 +4,7 @@
   [place="village"][zoom>=11],
   [place="suburb"][zoom>=11][zoom<14],
   [place="hamlet"][zoom>=13] {
-  	text-face-name: "PT Sans Regular";
+  	text-face-name: @sans;
     text-name: [name];
   	text-halo-radius: 2;
   	text-halo-fill: fadeout(white, 30%);
@@ -23,7 +23,7 @@
     }
     
     [place="village"], [place="hamlet"], [place="suburb"] {
-      text-face-name: "PT Sans Italic";
+      text-face-name: @sans_italic;
     }
     
   	text-size: 14;
@@ -54,7 +54,7 @@
   [place="village"][zoom>=8][zoom<11],
   [place="hamlet"][zoom>=10][zoom<13] {
     shield-file: url(icons/place.svg);
-  	shield-face-name: "PT Sans Regular";
+  	shield-face-name: @sans;
     shield-name: [name];
   	shield-halo-radius: 2;
   	shield-halo-fill: fadeout(white, 30%);
@@ -68,7 +68,7 @@
     /*text-character-spacing: 1.00;*/
     
     [place="village"], [place="hamlet"] {
-      shield-face-name: "PT Sans Italic";
+      shield-face-name: @sans_italic;
     }
     
   	shield-size: 14;

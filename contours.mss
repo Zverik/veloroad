@@ -22,7 +22,7 @@
   ::label {
     [zoom >= 13],
   	[ELEV =~ ".+00"] {
-      text-face-name: "PT Sans Caption Regular";
+      text-face-name: @sans_caption;
       text-name: "[ELEV]";
       text-size: 9;
       text-fill: fadein(@contour, 30%);

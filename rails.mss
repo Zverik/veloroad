@@ -6,7 +6,7 @@
 #subway[zoom>=14] {
   shield-file: url(icons/subway.svg);
   shield-name: [name];
-  shield-face-name: "PT Sans Bold";
+  shield-face-name: @sans_bold;
   shield-fill: black;
   shield-size: 10;
   shield-text-dx: 8;
@@ -34,7 +34,7 @@
   [railway="halt"][zoom>=13] {
     [len<=12], [zoom>=14] {
     text-name: [name];
-    text-face-name: "PT Sans Regular";
+    text-face-name: @sans;
     text-fill: @gray;
     text-size: 10;
     text-dx: 7;

@@ -29,7 +29,7 @@
 }
 
 #wlabels[zoom>=8] {
-  text-face-name: "PT Sans Italic";
+  text-face-name: @sans_italic;
   text-name: [name];
   text-size: 10;
   text-character-spacing: 1.1;
@@ -44,7 +44,7 @@
 #wolabels[zoom=10][way_area>10000000],
 #wolabels[zoom=11][way_area>1000000],
 #wolabels[zoom>=12] {
-  text-face-name: "PT Sans Italic";
+  text-face-name: @sans_italic;
   text-name: [name];
   text-size: 10;
   text-fill: darken(@water, 40%);
@@ -55,7 +55,7 @@
 
 #plabels[zoom>=12][zoom<14][way_area>1000000],
 #plabels[zoom>=14][way_area>100000] {
-  text-face-name: "PT Sans Italic";
+  text-face-name: @sans_italic;
   text-name: [name];
   text-size: 10;
   text-fill: darken(@green, 30%);

@@ -86,7 +86,7 @@
   [highway="trunk"],
   [highway="motorway"] {
     text-name: [ref];
-    text-face-name: "PT Sans Caption Regular";
+    text-face-name: @sans_caption;
     text-size: 10;
     text-fill: black;
     text-allow-overlap: false;
@@ -103,7 +103,7 @@
 
 #hslabels[zoom>=12] {
   text-name: [name];
-  text-face-name: "PT Sans Regular";
+  text-face-name: @sans;
   text-size: 10;
   text-fill: black;
   text-halo-radius: 1;

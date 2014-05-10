@@ -3,6 +3,11 @@
 @gray: #909090;
 @lightgray: #e0e0e0;
 
+@sans: "PT Sans Regular";
+@sans_italic: "PT Sans Italic";
+@sans_bold: "PT Sans Bold";
+@sans_caption: "PT Sans Caption Regular";
+
 Map {
   background-color: white;
   buffer-size: 128;
@@ -70,7 +75,7 @@ Map {
 
 #scale[label!=''] {
   text-name: [label];
-  text-face-name: "PT Sans Regular";
+  text-face-name: @sans;
   text-size: 12;
   text-dy: -8;
   [label=~'.+Open.+'] {
