@@ -21,7 +21,7 @@
 
   ::label {
     [zoom >= 13],
-  	[ELEV =~ ".+00"] {
+    [ELEV =~ ".+00"] {
       text-face-name: @sans_caption;
       text-name: "[ELEV]";
       text-size: 9;

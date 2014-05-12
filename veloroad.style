@@ -63,6 +63,7 @@ node,way   junction     text         linear
 node,way   landuse      text         polygon
 node,way   layer        text         linear
 node,way   leisure      text         polygon
+way        living_street text         linear
 node,way   lock         text         linear
 node,way   man_made     text         polygon
 node,way   military     text         polygon
@@ -93,7 +94,6 @@ node,way   toll         text         linear
 node,way   tourism      text         polygon
 node,way   tower:type   text         linear
 way        tracktype    text         linear
-way  living_street   text  linear
 node,way   tunnel       text         linear
 node,way   water        text         polygon
 node,way   waterway     text         polygon

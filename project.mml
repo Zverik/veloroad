@@ -37,7 +37,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "placep",
@@ -60,7 +60,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "forest",
@@ -83,7 +83,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "residential",
@@ -107,7 +107,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "rivers",
@@ -150,7 +150,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis",
         "id": "lakes",
         "project": "lineart",
@@ -177,7 +177,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7140538.62,4638661.07,9130629.86",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "admin",
@@ -201,7 +201,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7140538.62,4638661.07,9130629.86",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "admin-line",
@@ -247,7 +247,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "buildings",
@@ -299,7 +299,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "railway",
@@ -323,7 +323,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "tunnels",
@@ -347,7 +347,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "highways",
@@ -371,7 +371,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "bridges",
@@ -395,7 +395,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "subway",
@@ -447,7 +447,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis",
         "id": "places",
         "project": "lineart",
@@ -474,7 +474,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2335024.23,7141196.96,4632156.56,9130694.46",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis",
         "id": "stations",
         "project": "lineart",
@@ -501,7 +501,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "hlabels",
@@ -525,7 +525,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "wlabels",
@@ -549,7 +549,7 @@
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139748.76,4639788.11,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "hslabels",
@@ -572,7 +572,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "plabels",
@@ -596,7 +596,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "2301145.38,7139713.49,4635799.21,9130895.72",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis"
       },
       "id": "wolabels",
@@ -620,7 +620,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "custom",
-        "extent": "20,50,40,70",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
         "dbname": "gis",
         "id": "scale",
         "project": "lineart",

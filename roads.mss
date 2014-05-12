@@ -5,7 +5,7 @@
   [highway="living_street"][zoom>=12],
   [highway="pedestrian"][zoom>=12],
   [highway="residential"][zoom>=12] {
-	line-width:1.3;
+    line-width:1.3;
     line-color:@gray;
   }
   
@@ -19,7 +19,7 @@
   [highway="motorway_link"][zoom>=12],
   [highway="trunk_link"][zoom>=12],
   [highway="primary_link"][zoom>=12] {
-	line-width:1.5;
+    line-width:1.5;
     [zoom=6] { line-width: 1; }
     line-color:black;
   }

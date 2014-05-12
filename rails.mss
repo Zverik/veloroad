@@ -45,8 +45,8 @@
         text-placements: "N,S,E,W,NE,NW,SW,SE";
     }
     text-allow-overlap: false;
-  	text-halo-radius: 1.5;
-  	text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+    text-halo-fill: fadeout(white, 30%);
     }
   }
 }
