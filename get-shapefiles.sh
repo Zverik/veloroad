@@ -16,3 +16,6 @@ tar -xJvf data/gmted25.tar.xz --overwrite -C data/gmted
 echo Downloading PT Sans fonts
 curl -z data/ptsans.zip -L -o data/ptsans.zip http://www.fontstock.com/public/PTSans.zip
 unzip -o data/ptsans.zip -d data/ptsans
+
+echo Downloading Droid Sans Fallback font
+curl -z data/ptsans/DroidSansFallback.ttf -L -o data/ptsans/DroidSansFallback.ttf https://github.com/android/platform_frameworks_base/raw/master/data/fonts/DroidSansFallback.ttf
