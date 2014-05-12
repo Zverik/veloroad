@@ -2,11 +2,13 @@
 @green: #0f0;
 @gray: #909090;
 @lightgray: #e0e0e0;
+@purple: #ac46ac;
+@lpurple: lighten(@purple, 40%);
 
-@sans: "PT Sans Regular";
-@sans_italic: "PT Sans Italic";
-@sans_bold: "PT Sans Bold";
-@sans_caption: "PT Sans Caption Regular";
+@sans: "PT Sans Regular", "Droid Sans Fallback Regular";
+@sans_italic: "PT Sans Italic", "Droid Sans Fallback Regular";
+@sans_bold: "PT Sans Bold", "Droid Sans Fallback Regular";
+@sans_caption: "PT Sans Caption Regular", "Droid Sans Fallback Regular";
 
 Map {
   background-color: white;
@@ -32,32 +34,33 @@ Map {
 /*  ADMIN BORDERS  */
 
 #admin[admin_level="2"] {
-  line-color: @lightgray;
+  line-color: @lpurple;
   line-width: 6;
+  [zoom<8] { line-width: 5; }
 }
 
 #admin[admin_level="4"] {
-  line-color: @lightgray;
+  line-color: @lpurple;
   line-width: 3;
 }
 
 #admin[admin_level="6"][zoom>=9] {
   line-width: 2;
-  line-color: @lightgray;
-  line-dasharray: 4;
+  line-color: @lpurple;
+  line-dasharray: 6;
 }
 
 #admin-line[admin_level="4"] {
-    line-width: 1;
-    line-dasharray: 6;
-    line-color: @gray;
+  line-width: 1;
+  line-dasharray: 6;
+  line-color: @purple;
 }
 
 #admin-line[admin_level="2"] {
-    line-width: 2;
-    [zoom<9] { line-width: 1.5; }
-    line-dasharray: 6;
-    line-color: @gray;
+  line-width: 2;
+  [zoom<9] { line-width: 1.5; }
+  line-dasharray: 6;
+  line-color: @purple;
 }
 
 /* SCALE */

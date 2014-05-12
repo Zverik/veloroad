@@ -28,14 +28,14 @@
   line-width:2;
 }
 
-#wlabels[zoom>=8] {
+#wlabels[zoom>=6] {
   text-face-name: @sans_italic;
   text-name: [name];
   text-size: 10;
   text-character-spacing: 1.1;
   text-fill: darken(@water, 40%);
   text-placement: line;
-  text-dy: 8;
+  [zoom<12] { text-dy: 8; }
   text-allow-overlap: false;
   text-min-distance: 300;
   text-spacing: 600;

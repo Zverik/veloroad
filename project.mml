@@ -128,7 +128,7 @@
       "id": "ocean",
       "class": "",
       "Datasource": {
-		"type": "shape",
+        "type": "shape",
         "file": "data/water-polygons-split-3857/water_polygons.shp"
       },
       "layer": null,
@@ -222,7 +222,7 @@
       "id": "contours",
       "class": "",
       "Datasource": {
-		"type": "shape",
+        "type": "shape",
         "file": "data/gmted/gmted-contour25g.shp",
         "id": "contours",
         "project": "lineart",
