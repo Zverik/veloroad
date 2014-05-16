@@ -13,7 +13,7 @@
 Map {
   background-color: white;
   buffer-size: 128;
-  font-directory: url(./data/ptsans);
+  font-directory: url(data/ptsans);
 }
 
 .route {

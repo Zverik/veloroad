@@ -4,7 +4,7 @@
   [place="village"][zoom>=11],
   [place="suburb"][zoom>=11][zoom<14],
   [place="hamlet"][zoom>=13] {
-    text-face-name: @sans;
+    text-face-name: @sans_italic;
     text-name: [name];
     text-halo-radius: 2;
     text-halo-fill: fadeout(white, 30%);
@@ -22,8 +22,8 @@
       text-dy: 4;
     }
     
-    [place="village"], [place="hamlet"], [place="suburb"] {
-      text-face-name: @sans_italic;
+    [place="city"], [place="town"] {
+      text-face-name: @sans;
     }
     
     text-size: 14;
@@ -52,9 +52,11 @@
 
   [place="town"][zoom<9],
   [place="village"][zoom>=8][zoom<11],
-  [place="hamlet"][zoom>=10][zoom<13] {
+  [place="hamlet"][zoom>=10][zoom<13],
+  [place="isolated_dwelling"][zoom>=13],
+  [place="allotments"][zoom>=13] {
     shield-file: url(icons/place.svg);
-    shield-face-name: @sans;
+    shield-face-name: @sans_italic;
     shield-name: [name];
     shield-halo-radius: 2;
     shield-halo-fill: fadeout(white, 30%);
@@ -67,8 +69,8 @@
     shield-unlock-image: true;
     /*text-character-spacing: 1.00;*/
     
-    [place="village"], [place="hamlet"] {
-      shield-face-name: @sans_italic;
+    [place="town"], [place="city"] {
+      shield-face-name: @sans;
     }
     
     shield-size: 14;
@@ -83,6 +85,28 @@
     [place="hamlet"] {
       shield-size: 10;
     }
+    [place="isolated_dwelling"], [place="allotments"] {
+      shield-size: 10;
+    }
+  }
+}
+
+#islands {
+  [zoom>=6][zoom<8][way_area>=3e7][way_area<3e9],
+  [zoom>=8][zoom<10][way_area>=3e6][way_area<1e8],
+  [zoom>=10][zoom<12][way_area>=3e5][way_area<3e6] {
+    text-face-name: @sans_italic;
+    text-name: [name];
+    text-fill: black;
+    text-halo-radius: 1;
+    text-halo-fill: fadeout(white, 30%);
+    text-min-distance: 30;
+    text-allow-overlap: false;
+    text-placement-type: simple;
+    text-placements: "NE,NW,SW,SE,E,N,W,S";
+    text-dx: 6;
+    text-dy: 4;
+    text-size: 10;
   }
 }
 

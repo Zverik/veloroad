@@ -96,18 +96,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        20.67154065835024,
-        53.8391333927831,
-        41.679925742890276,
-        63.124710468885965
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way,waterway,name from planet_osm_line where waterway in ('stream', 'river','drain','ditch','canal')) as rivers",
+        "table": "(select way,waterway,name,ST_Length(way) as length from planet_osm_line where waterway in ('stream', 'river','drain','ditch','canal')) as rivers",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "rivers",
@@ -436,18 +436,18 @@
     {
       "geometry": "point",
       "extent": [
-        20.975879545984167,
-        53.84680894368537,
-        41.61137036282504,
-        63.12389317378751
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way,place,coalesce(\"name:ru\", name) as name,(case when place='city' then 9 when place='town' then 8 when place='village' then 7 when place='hamlet' then 6 when place='suburb' then 5 when place='locality' then 4 else 0 end) as p_order, (case when coalesce(population, '')~E'^\\\\d+$' then population::int else 0 end) as pop from planet_osm_point where place in ('village', 'town', 'city', 'hamlet', 'suburb', 'locality') order by p_order desc, pop desc) as places",
+        "table": "(select way,place,coalesce(\"name:ru\", name) as name,(case when place='city' then 9 when place='town' then 8 when place='village' then 7 when place='hamlet' then 6 when place='suburb' then 5 when place='locality' then 4 when place in ('isolated_dwelling', 'allotments') then 3 else 0 end) as p_order, (case when coalesce(population, '')~E'^\\\\d+$' then population::int else 0 end) as pop from planet_osm_point where place in ('village', 'town', 'city', 'hamlet', 'suburb', 'locality', 'isolated_dwelling', 'island', 'allotments') order by p_order desc, pop desc) as places",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis",
         "id": "places",
         "project": "lineart",
@@ -581,6 +581,29 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "advanced": {},
       "name": "plabels"
+    },
+    {
+      "extent": [
+        19.3038209633083,
+        41.74999993524841,
+        179.94826375194316,
+        76.98633298581831
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select place, name, ST_PointOnSurface(way) as way, way_area from planet_osm_polygon where place='island' order by way_area desc) as islands",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "dbname": "gis"
+      },
+      "id": "islands",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "islands"
     },
     {
       "geometry": "linestring",
