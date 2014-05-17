@@ -632,14 +632,14 @@
     {
       "geometry": "linestring",
       "extent": [
-        20,
-        50,
-        40,
-        70
+        -180,
+        -85.051,
+        180,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select id+1 as id, (case when id<n or id>n*2+1 then '' when id < n*2 then cast((id-n)*scale as text) when id=n*2 then (n*scale)||' км' else 'Карта © OpenStreetMap' end) as label, id%2 as id2,\n(case when id < n then ST_MakeLine(st_project(pt, 1000*scale*id, pi()/2)::geometry,\nst_project(pt, 1000*scale*(id+1), pi()/2)::geometry)\nwhen id <= n*2 then st_project(pt, 1000*scale*(id-n), pi()/2)::geometry\nelse st_project(pt, 1000*scale*n/2, pi()/2)::geometry\nend) as way\nfrom\n(select 5 as n, 1 as scale, ST_SetSRID(ST_Point(34.3, 61.94), 4326) as pt) d,\ngenerate_series(0, 11) id) as scale",
+        "table": "(select id+1 as id, (case when id<n or id>n*2+1 or (id-n > scale and id < n*2) then '' when id < n*2 then cast((id-n)*scale as text) when id=n*2 then (n*scale)||' км' else 'Карта © OpenStreetMap' end) as label, id%2 as id2,\n(case when id < n then ST_MakeLine(st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*id, pi()/2)::geometry,\nst_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id+1), pi()/2)::geometry)\nwhen id <= n*2 then st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id-n), pi()/2)::geometry\nelse pt\nend) as way\nfrom\n(select 5 as n, 1 as scale, ST_SetSRID(ST_Point(30, 60), 4326) as pt) d,\ngenerate_series(0, 11) id) as scale",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "custom",

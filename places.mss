@@ -110,7 +110,7 @@
   }
 }
 
-#placep[zoom<12],
+#placep[zoom>=9][zoom<12],
 #residential[zoom>=12] {
   polygon-fill: @lightgray;
   polygon-opacity: 1;
