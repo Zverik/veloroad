@@ -18,7 +18,7 @@
 #rivers[waterway="canal"] {
   [zoom<8][length>10000] {
     line-color: @water;
-    line-width: 0.3;
+    line-width: 0.2;
   }
 }
 

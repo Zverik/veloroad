@@ -10,7 +10,7 @@
     text-halo-fill: fadeout(white, 30%);
     text-placement-type: simple;
     text-placements: "X,N,S,NE,SE,NW,SW";
-    text-min-distance: 15;
+    text-min-distance: 20;
     text-allow-overlap: false;
     /*text-character-spacing: 1.00;*/
     
@@ -59,7 +59,7 @@
     shield-placements: "NE,NW,SW,SE,E,N,W,S";
     shield-text-dx: 4;
     shield-text-dy: 4;
-    shield-min-distance: 15;
+    shield-min-distance: 20;
     shield-allow-overlap: false;
     shield-unlock-image: true;
     /*text-character-spacing: 1.00;*/
@@ -76,6 +76,7 @@
     [place="village"] {
       [zoom>=10][zoom<12] { shield-size: 11; }
     }
+    [place="hamlet"] { shield-min-distance: 30; }
   }
 }
 

@@ -39,18 +39,20 @@ Map {
   [zoom<8] { line-width: 5; }
 }
 
-#admin[admin_level="4"] {
+#admin[admin_level="4"][zoom>=8] {
   line-color: @lpurple;
   line-width: 3;
 }
 
+#admin[admin_level="4"][zoom<8],
 #admin[admin_level="6"][zoom>=9] {
   line-width: 2;
+  [zoom<10] { line-width: 1.5; }
   line-color: @lpurple;
   line-dasharray: 6;
 }
 
-#admin-line[admin_level="4"] {
+#admin-line[admin_level="4"][zoom>=8] {
   line-width: 1;
   line-dasharray: 6;
   line-color: @purple;
