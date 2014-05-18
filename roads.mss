@@ -104,16 +104,16 @@
 #hslabels[zoom>=12] {
   text-name: [name];
   text-face-name: @sans;
-  text-size: 10;
+  text-size: 9;
   text-fill: black;
   text-halo-radius: 1;
   text-halo-fill: fadeout(white, 30%);
   text-allow-overlap: false;
-  text-dy: 7;
+  text-dy: 6;
   text-placement: line;
   text-min-distance: 10;
   [zoom>=14] {
-    text-size: 12;
-    text-dy: 9;
+    text-size: 11;
+    text-dy: 8;
   }
 }

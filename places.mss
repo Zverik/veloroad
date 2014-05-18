@@ -26,27 +26,22 @@
       text-face-name: @sans;
     }
     
-    text-size: 14;
+    text-size: 9;
     [place="city"] {
-      [zoom<8] { text-size: 16; }
-      [zoom>=8] { text-size: 20; }
+      [zoom<8] { text-size: 14; }
+      [zoom>=8] { text-size: 16; }
     }    
     [place="town"] {
-      [zoom<8] { text-size: 12; }
-      [zoom>=8][zoom<12] { text-size: 14; }
-      [zoom>=12] { text-size: 18; }
+      [zoom>=8][zoom<12] { text-size: 12; }
+      [zoom>=12] { text-size: 14; }
     }
     [place="suburb"] {
-      [zoom<12] { text-size: 12; }
-      [zoom>=12] { text-size: 13; }
+      [zoom<12] { text-size: 11; }
+      [zoom>=12] { text-size: 12; }
     }
     [place="village"] {
-      [zoom<8] { text-size: 10; }
-      [zoom>=8][zoom<12] { text-size: 12; }
-      [zoom>=12] { text-size: 16; }
-    }
-    [place="hamlet"] {
-      text-size: 10;
+      [zoom>=8][zoom<12] { text-size: 11; }
+      [zoom>=12] { text-size: 12; }
     }
   }
 
@@ -73,20 +68,13 @@
       shield-face-name: @sans;
     }
     
-    shield-size: 14;
+    shield-size: 9;
     [place="town"] {
-      [zoom<8] { shield-size: 12; }
-      [zoom>=8][zoom<12] { shield-size: 14; }
-    }
-    [place="village"] {
       [zoom<8] { shield-size: 10; }
       [zoom>=8][zoom<12] { shield-size: 12; }
     }
-    [place="hamlet"] {
-      shield-size: 10;
-    }
-    [place="isolated_dwelling"], [place="allotments"] {
-      shield-size: 10;
+    [place="village"] {
+      [zoom>=10][zoom<12] { shield-size: 11; }
     }
   }
 }
@@ -106,7 +94,7 @@
     text-placements: "NE,NW,SW,SE,E,N,W,S";
     text-dx: 6;
     text-dy: 4;
-    text-size: 10;
+    text-size: 9;
   }
 }
 
