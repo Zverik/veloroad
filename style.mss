@@ -81,8 +81,8 @@ Map {
 #scale[label!=''] {
   text-name: [label];
   text-face-name: @sans;
-  text-size: 12;
-  text-dy: -8;
+  text-size: 10;
+  text-dy: -7;
   [label=~'.+Open.+'] {
     text-dy: 8;
     text-size: 8;

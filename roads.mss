@@ -90,16 +90,16 @@
   [highway="motorway"] {
     text-name: [ref];
     text-face-name: @sans_caption;
-    text-size: 10;
+    text-size: 9;
     text-fill: black;
     text-allow-overlap: false;
     text-min-distance: 400;
     text-spacing: 400;
     text-placement: line;
-    text-dy: 8;
+    text-dy: 7;
     [highway="trunk"][zoom>=12],
     [highway="motorway"][zoom>=12] {
-      text-dy: 10;
+      text-dy: 9;
     }
   }
 }
