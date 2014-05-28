@@ -103,7 +103,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way,waterway,name,ST_Length(way) as length from planet_osm_line where waterway in ('stream', 'river','drain','ditch','canal')) as rivers",
+        "table": "(select way,waterway,name,ST_Length(way) as length from planet_osm_line where waterway in ('stream', 'river','drain','ditch','canal') and tunnel is null) as rivers",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
@@ -295,7 +295,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way from planet_osm_line where railway='rail' and service is null) as railway",
+        "table": "(select way from planet_osm_line where railway='rail' and service is null and tunnel is null) as railway",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
