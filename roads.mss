@@ -38,9 +38,9 @@
       line-join: round;
     }
     ::inner {
-      line-width: 1.5;
+      line-width: 1.7;
       [zoom<9], [highway="primary"][zoom<12] { line-width: 1.3; }
-      line-color: white;
+      line-color: @yellow;
       line-cap: round;
       line-join: round;
     }
@@ -57,7 +57,7 @@
     }
     ::inner {
       line-width: 3.5;
-      line-color: white;
+      line-color: @yellow;
       line-cap: round;
       line-join: round;
     }
@@ -85,6 +85,8 @@
 }
 
 #hlabels[zoom>=8] {
+  [highway="tertiary"][zoom>=13],
+  [highway="secondary"][zoom>=10],
   [highway="primary"],
   [highway="trunk"],
   [highway="motorway"] {
@@ -93,7 +95,7 @@
     text-size: 9;
     text-fill: black;
     text-allow-overlap: false;
-    text-min-distance: 400;
+    text-min-distance: 300;
     text-spacing: 400;
     text-placement: line;
     text-dy: 7;

@@ -26,10 +26,10 @@
   "Layer": [
     {
       "extent": [
-        20.67154065835024,
-        53.83894644201676,
-        41.64409284452203,
-        63.124710468885965
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
@@ -37,7 +37,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "placep",
@@ -60,7 +60,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "forest",
@@ -72,18 +72,18 @@
     },
     {
       "extent": [
-        20.67154065835024,
-        53.83894644201676,
-        41.64409284452203,
-        63.124710468885965
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way from planet_osm_polygon where landuse in ('residential', 'commercial', 'industrial', 'farmyard')) as landuse",
+        "table": "(select way from planet_osm_polygon where landuse in ('residential', 'commercial', 'industrial', 'farmyard') or amenity is not null or power is not null) as landuse",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "residential",
@@ -150,7 +150,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis",
         "id": "lakes",
         "project": "lineart",
@@ -177,7 +177,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "admin",
@@ -201,7 +201,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "admin-line",
@@ -247,7 +247,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "buildings",
@@ -256,6 +256,30 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "advanced": {},
       "name": "buildings"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        19.290104407572024,
+        41.16666668212161,
+        179.9537075425649,
+        76.98934997681025
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way from planet_osm_line where power='line') as power",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
+        "dbname": "gis"
+      },
+      "id": "power",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "power"
     },
     {
       "geometry": "linestring",
@@ -288,18 +312,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        20.67154065835024,
-        53.8391333927831,
-        41.679925742890276,
-        63.124710468885965
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way from planet_osm_line where railway='rail' and service is null and tunnel is null) as railway",
+        "table": "(select way, railway from planet_osm_line where railway in ('rail', 'narrow_gauge') and service is null and tunnel is null) as railway",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "railway",
@@ -323,7 +347,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "tunnels",
@@ -347,7 +371,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "highways",
@@ -371,7 +395,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "bridges",
@@ -395,7 +419,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "subway",
@@ -408,12 +432,12 @@
     {
       "geometry": "linestring",
       "extent": [
-        33.664577,
-        61.794854,
-        34.299016,
-        62.476441
+        29.54747,
+        60.06791,
+        30.32233,
+        60.57137
       ],
-      "id": "gorny",
+      "id": "route",
       "class": "route",
       "Datasource": {
         "type": "ogr",
@@ -427,10 +451,10 @@
         ]
       },
       "layer": "tracks",
-      "srs-name": "autodetect",
+      "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "gorny",
+      "name": "route",
       "status": "off"
     },
     {
@@ -463,18 +487,18 @@
     {
       "geometry": "point",
       "extent": [
-        20.975879545984167,
-        53.84680894368537,
-        41.61137036282504,
-        63.12389317378751
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way,railway,station,name,length(name) as len,(select 90+degrees(ST_Azimuth(ST_StartPoint(inter), ST_EndPoint(inter))) from (select ST_Intersection(r.way, ST_Buffer(p.way, 100)) as inter from planet_osm_line r where r.railway='rail' and r.way && ST_Buffer(p.way, 100) order by ST_Distance(r.way, p.way) limit 1) rr) as angle from planet_osm_point p where railway in ('station', 'halt') and (station is null or station != 'subway')) as stations",
+        "table": "(select way,railway,station,coalesce(\"name:ru\", name) as name,length(coalesce(\"name:ru\", name)) as len,(select 90+degrees(ST_Azimuth(ST_StartPoint(inter), ST_EndPoint(inter))) from (select ST_Intersection(r.way, ST_Buffer(p.way, 100)) as inter from planet_osm_line r where r.railway in ('rail', 'narrow_gauge') and r.way && ST_Buffer(p.way, 100) order by ST_Distance(r.way, p.way) limit 1) rr) as angle from planet_osm_point p where railway in ('station', 'halt') and (station is null or (station != 'subway' and station != 'disused'))) as stations",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis",
         "id": "stations",
         "project": "lineart",
@@ -501,7 +525,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "hlabels",
@@ -525,7 +549,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "wlabels",
@@ -549,7 +573,7 @@
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "hslabels",
@@ -572,7 +596,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "plabels",
@@ -595,7 +619,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "islands",
@@ -619,7 +643,7 @@
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "auto",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis"
       },
       "id": "wolabels",
@@ -639,11 +663,11 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select id+1 as id, (case when id<n or id>n*2+1 or (id-n > scale and id < n*2) then '' when id < n*2 then cast((id-n)*scale as text) when id=n*2 then (n*scale)||' км' else 'Карта © OpenStreetMap' end) as label, id%2 as id2,\n(case when id < n then ST_MakeLine(st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*id, pi()/2)::geometry,\nst_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id+1), pi()/2)::geometry)\nwhen id <= n*2 then st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id-n), pi()/2)::geometry\nelse pt\nend) as way\nfrom\n(select 5 as n, 1 as scale, ST_SetSRID(ST_Point(30, 60), 4326) as pt) d,\ngenerate_series(0, 11) id) as scale",
+        "table": "(select id+1 as id, (case when id<n or id>n*2+1 or (id-n > 1 and id < n*2) then '' when id < n*2 then cast((id-n)*scale as text) when id=n*2 then (n*scale)||' км' else 'Карта © OpenStreetMap' end) as label, id%2 as id2,\n(case when id < n then ST_MakeLine(st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*id, pi()/2)::geometry,\nst_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id+1), pi()/2)::geometry)\nwhen id <= n*2 then st_project(st_project(pt, 1000*scale*n/2, -pi()/2), 1000*scale*(id-n), pi()/2)::geometry\nelse pt\nend) as way\nfrom\n(select 5 as n, 1 as scale, ST_SetSRID(ST_Point(30, 60), 4326) as pt) d,\ngenerate_series(0, 11) id) as scale",
         "key_field": "",
         "geometry_field": "way",
         "extent_cache": "custom",
-        "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "dbname": "gis",
         "id": "scale",
         "project": "lineart",

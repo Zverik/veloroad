@@ -51,11 +51,20 @@
   }
 }
 
-.railway {
+.railway[railway="rail"] {
   casing/line-width: 2.5;
   casing/line-color: @gray;
   
   dash/line-width: 1.5;
   dash/line-color: white;
   dash/line-dasharray: 8;
+}
+
+.railway[railway="narrow_gauge"][zoom>=10] {
+  casing/line-width: 1.2;
+  casing/line-color: @gray;
+
+  dash/line-width: 5;
+  dash/line-color: @gray;
+  dash/line-dasharray: 1, 10;
 }

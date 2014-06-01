@@ -4,6 +4,7 @@
 @lightgray: #e0e0e0;
 @purple: #ac46ac;
 @lpurple: lighten(@purple, 40%);
+@yellow: #ffe7a8;
 
 @sans: "PT Sans Regular", "Droid Sans Fallback Regular";
 @sans_italic: "PT Sans Italic", "Droid Sans Fallback Regular";
@@ -29,6 +30,12 @@ Map {
 #buildings[zoom>=15] {
   polygon-fill: @gray;
   polygon-opacity: 1;
+}
+
+#power[zoom>=13] {
+  line-width: 0.5;
+  line-color: fadeout(#a51a1a, 30%);
+  line-dasharray: 20, 2, 2, 2;
 }
 
 /*  ADMIN BORDERS  */
@@ -81,10 +88,10 @@ Map {
 #scale[label!=''] {
   text-name: [label];
   text-face-name: @sans;
-  text-size: 10;
+  text-size: 9;
   text-dy: -7;
   [label=~'.+Open.+'] {
-    text-dy: 8;
+    text-dy: 7;
     text-size: 8;
   }
   text-allow-overlap: true;
