@@ -14,7 +14,7 @@ curl -z "data/gmted25.tar.xz" -L -o "data/gmted25.tar.xz" "http://zverik.osm.ram
 tar -xJvf data/gmted25.tar.xz --overwrite -C data/gmted
 
 echo Downloading PT Sans fonts
-curl -z data/ptsans.zip -L -o data/ptsans.zip http://www.fontstock.com/public/PTSans.zip
+curl -z data/ptsans.zip -L -o data/ptsans.zip https://www.fontsquirrel.com/fonts/download/pt-sans
 unzip -o data/ptsans.zip -d data/ptsans
 
 echo Downloading Droid Sans Fallback font
