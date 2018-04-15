@@ -10,7 +10,7 @@ unzip -o data/water-polygons-split-3857.zip -d data/
 shapeindex data/water-polygons-split-3857/water_polygons.shp
 
 echo Downloading contours
-curl -z "data/gmted25.tar.xz" -L -o "data/gmted25.tar.xz" "http://zverik.osm.rambler.ru/gmted25.tar.xz"
+curl -z "data/gmted25.tar.xz" -L -o "data/gmted25.tar.xz" "http://zverik.openstreetmap.ru/gmted25.tar.xz"
 tar -xJvf data/gmted25.tar.xz --overwrite -C data/gmted
 
 echo Downloading PT Sans fonts
